@@ -53,12 +53,12 @@ public class Film {
     @Valid
     @JsonIgnore
     @ManyToMany
-    private List<Character> characters;
+    private List<FilmCharacter> filmCharacters;
 
     public Film() {
     }
 
-    public Film(String title, int length, String summary, byte[] coverImage, Genre genre, String directorFullName, int userRating, URL trailerUrl, List<Character> characters) {
+    public Film(String title, int length, String summary, byte[] coverImage, Genre genre, String directorFullName, int userRating, URL trailerUrl, List<FilmCharacter> filmCharacters) {
         this.title = title;
         this.length = length;
         this.summary = summary;
@@ -67,7 +67,7 @@ public class Film {
         this.directorFullName = directorFullName;
         this.userRating = userRating;
         this.trailerUrl = trailerUrl;
-        this.characters = characters;
+        this.filmCharacters = filmCharacters;
     }
 
     public int getId() {
@@ -142,11 +142,11 @@ public class Film {
         this.trailerUrl = trailerUrl;
     }
 
-    public List<Character> getCharacters() {
-        return characters;
+    public List<FilmCharacter> getFilmCharacters() {
+        return filmCharacters;
     }
 
-    public void setCharacters(List<Character> characters) {
-        this.characters = characters;
+    public void setFilmCharacters(List<FilmCharacter> filmCharacters) {
+        this.filmCharacters = filmCharacters;
     }
 }

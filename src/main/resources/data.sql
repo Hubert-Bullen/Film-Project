@@ -17,4 +17,7 @@ INSERT INTO actor(first_name, last_name, gender, bio)
 VALUES('Robert', 'Downey Jr', 'MALE',
        'Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing list of credits to his name, he has managed to stay new and
         fresh even after over four decades in the business. Downey was born April 4, 1965 in Manhattan, New York, the son of writer, director and filmographer Robert
-        Downey Sr. and actress Elsie Downey.')
+        Downey Sr. and actress Elsie Downey.');
+
+
+INSERT INTO filmcharacter(char_name) VAlUES('Tony Stark A.K.A Iron Man')

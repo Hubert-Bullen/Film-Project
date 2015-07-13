@@ -1,5 +1,6 @@
 package be.vdab.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -29,27 +30,30 @@ public class Actor {
 
     @NotBlank
     @Size(min = 2, max = 225)
+    @Lob
     private String bio;
 
     @NotNull
+    @Enumerated(value = EnumType.STRING)
     private Gender gender;
 
     private byte[] profileImage;
 
     @Valid
     @ManyToMany
-    private List<Character> characters;
+    @JsonIgnore
+    private List<FilmCharacter> filmCharacters;
 
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String bio, Gender gender, byte[] profileImage, List<Character> characters) {
+    public Actor(String firstName, String lastName, String bio, Gender gender, byte[] profileImage, List<FilmCharacter> filmCharacters) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
         this.gender = gender;
         this.profileImage = profileImage;
-        this.characters = characters;
+        this.filmCharacters = filmCharacters;
     }
 
     public int getId() {
@@ -100,11 +104,15 @@ public class Actor {
         this.profileImage = profileImage;
     }
 
-    public List<Character> getCharacters() {
-        return characters;
+    public List<FilmCharacter> getFilmCharacters() {
+        return filmCharacters;
     }
 
-    public void setCharacters(List<Character> characters) {
-        this.characters = characters;
+    public void setFilmCharacters(List<FilmCharacter> filmCharacters) {
+        this.filmCharacters = filmCharacters;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 }

@@ -1,7 +1,7 @@
 package be.vdab.service;
 
-import be.vdab.domain.Film;
-import be.vdab.repository.FilmRepository;
+import be.vdab.domain.Actor;
+import be.vdab.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,24 +16,24 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * Created by Hyuberuto on 10/07/15.
  */
 @RestController
-public class FilmService {
+public class ActorService {
 
     @Autowired
-    private FilmRepository filmRepository;
+    private ActorRepository actorRepository;
 
-    @RequestMapping(value = "/films", method = GET, produces = "application/json")
+    @RequestMapping(value = "/actors", method = GET, produces = "application/json")
     public List<String> findAllActors() {
-        List<Film> films = filmRepository.findAll();
+        List<Actor> actors = actorRepository.findAll();
         List<String> actorNames = new ArrayList<>();
-        for (Film f : films){
-            actorNames.add(f.getTitle());
+        for (Actor a : actors){
+            actorNames.add(a.getFullName());
         }
         return actorNames;
     }
 
-    @RequestMapping(value = "/films/{filmId}")
-    public Film findById(@PathVariable("filmId") int id){
-        return filmRepository.findOne(id);
+    @RequestMapping(value = "/actors/{actorId}")
+    public Actor findActorById(@PathVariable("actorId") int id){
+        return actorRepository.findOne(id);
     }
 
 }

@@ -1,5 +1,6 @@
 package be.vdab.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
@@ -11,29 +12,31 @@ import java.util.List;
  * Created by Hyuberuto on 10/07/15.
  */
 
-@Entity
-public class Character {
+@Entity(name = "filmcharacter")
+public class FilmCharacter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotBlank
-    @Size(min = 2, max = 12)
+    @Size(min = 2, max = 25)
     private String charName;
 
     @Valid
-    @ManyToMany(mappedBy = "characters")
+    @ManyToMany(mappedBy = "filmCharacters")
+    @JsonIgnore
     private List<Film> films;
 
     @Valid
-    @ManyToMany(mappedBy = "characters")
+    @ManyToMany(mappedBy = "filmCharacters")
+    @JsonIgnore
     private List<Actor> actors;
 
-    public Character() {
+    public FilmCharacter() {
     }
 
-    public Character(String charName, List<Film> films, List<Actor> actors) {
+    public FilmCharacter(String charName, List<Film> films, List<Actor> actors) {
         this.charName = charName;
         this.films = films;
         this.actors = actors;

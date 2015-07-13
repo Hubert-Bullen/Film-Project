@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -21,8 +22,13 @@ public class FilmService {
     private FilmRepository filmRepository;
 
     @RequestMapping(value = "/films", method = GET, produces = "application/json")
-    public List<Film> findAll() {
-        return filmRepository.findAll();
+    public List<String> findAllFilms() {
+        List<Film> films = filmRepository.findAll();
+        List<String> filmTitles = new ArrayList<>();
+        for (Film f : films){
+            filmTitles.add(f.getTitle());
+        }
+        return filmTitles;
     }
 
     @RequestMapping(value = "/films/{filmId}")

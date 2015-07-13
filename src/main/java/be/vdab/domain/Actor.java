@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Blob;
 import java.util.List;
 
 /**
@@ -29,9 +30,10 @@ public class Actor {
 
     @NotBlank
     @Size(min = 2, max = 225)
-    private String bio;
+    private Blob bio;
 
     @NotNull
+    @Enumerated(value = EnumType.STRING)
     private Gender gender;
 
     private byte[] profileImage;
@@ -43,13 +45,17 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String bio, Gender gender, byte[] profileImage, List<Character> characters) {
+    public Actor(String firstName, String lastName, Blob bio, Gender gender, byte[] profileImage, List<Character> characters) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
         this.gender = gender;
         this.profileImage = profileImage;
         this.characters = characters;
+    }
+
+    public String getFullName(){
+        return firstName + " " + lastName;
     }
 
     public int getId() {
@@ -76,11 +82,11 @@ public class Actor {
         this.lastName = lastName;
     }
 
-    public String getBio() {
+    public Blob getBio() {
         return bio;
     }
 
-    public void setBio(String bio) {
+    public void setBio(Blob bio) {
         this.bio = bio;
     }
 

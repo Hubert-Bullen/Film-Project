@@ -31,6 +31,8 @@ public class Film {
     @Size(min = 10, max = 225)
     private String summary;
 
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
     private byte[] coverImage;
 
     @NotNull

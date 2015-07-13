@@ -29,9 +29,11 @@ public class Actor {
 
     @NotBlank
     @Size(min = 2, max = 225)
+    @Lob // Full text
     private String bio;
 
     @NotNull
+    @Enumerated(EnumType.STRING) // Om in je DB te kunnen opslaan als 'MALE' ipv 1
     private Gender gender;
 
     private byte[] profileImage;

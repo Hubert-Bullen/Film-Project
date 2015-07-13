@@ -25,12 +25,10 @@ public class FilmCharacter {
 
     @Valid
     @ManyToMany(mappedBy = "filmCharacters")
-    @JsonIgnore
     private List<Film> films;
 
     @Valid
     @ManyToMany(mappedBy = "filmCharacters")
-    @JsonIgnore
     private List<Actor> actors;
 
     public FilmCharacter() {

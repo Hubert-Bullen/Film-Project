@@ -42,7 +42,6 @@ public class Actor {
 
     @Valid
     @ManyToMany
-    @JsonIgnore
     private List<FilmCharacter> filmCharacters;
 
     public Actor() {

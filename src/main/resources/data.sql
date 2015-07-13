@@ -20,4 +20,12 @@ VALUES('Robert', 'Downey Jr', 'MALE',
         Downey Sr. and actress Elsie Downey.');
 
 
-INSERT INTO filmcharacter(char_name) VAlUES('Tony Stark A.K.A Iron Man')
+INSERT INTO filmcharacter(char_name) VAlUES('Tony Stark A.K.A Iron Man');
+
+
+INSERT INTO `Film-Project`.`film_film_characters`(films_id, film_characters_id)
+VALUES (1 , 1);
+INSERT INTO `Film-Project`.`film_film_characters`(films_id, film_characters_id)
+VALUES (2 , 1);
+INSERT INTO `Film-Project`.`film_film_characters`(films_id, film_characters_id)
+VALUES (3 , 1);

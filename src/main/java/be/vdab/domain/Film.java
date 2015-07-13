@@ -53,7 +53,6 @@ public class Film {
     private URL trailerUrl;
 
     @Valid
-    @JsonIgnore
     @ManyToMany
     private List<FilmCharacter> filmCharacters;
 

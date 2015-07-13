@@ -7,7 +7,6 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Blob;
 import java.util.List;
 
 /**
@@ -31,14 +30,14 @@ public class Actor {
 
     @NotBlank
     @Size(min = 2, max = 225)
-    @Lob
+    @Lob // Full text
     private String bio;
 
     @NotNull
-    @Enumerated(value = EnumType.STRING)
+    @Enumerated(EnumType.STRING) // Om in je DB te kunnen opslaan als 'MALE' ipv 1
     private Gender gender;
 
-    private Blob profileImage;
+    private byte[] profileImage;
 
     @Valid
     @ManyToMany
@@ -47,7 +46,7 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String bio, Gender gender, Blob profileImage, List<FilmCharacter> filmCharacters) {
+    public Actor(String firstName, String lastName, String bio, Gender gender, byte[] profileImage, List<FilmCharacter> filmCharacters) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
@@ -96,11 +95,11 @@ public class Actor {
         this.gender = gender;
     }
 
-    public Blob getProfileImage() {
+    public byte[] getProfileImage() {
         return profileImage;
     }
 
-    public void setProfileImage(Blob profileImage) {
+    public void setProfileImage(byte[] profileImage) {
         this.profileImage = profileImage;
     }
 

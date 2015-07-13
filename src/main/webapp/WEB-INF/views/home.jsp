@@ -5,12 +5,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
-        <title>Home</title>
+        <title>Homepage</title>
     </head>
     <body>
         <h1>Home</h1>
         <p>This is the home page.</p>
-        <a href="car.html?id=1">Car details</a>
-        <a href="chooser.html">Model chooser</a>
+        <%--<a href="film.html?id=1">Iron Man details</a>--%>
+        <a href="films.html">Films</a>
+        <a href="actors.html">Actors</a>
+       <%-- <a href="chooser.html">Model chooser</a>--%>
     </body>
 </html>

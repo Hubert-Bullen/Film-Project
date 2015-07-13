@@ -1,6 +1,8 @@
 package be.vdab.controller;
 
+import be.vdab.domain.Actor;
 import be.vdab.domain.Film;
+import be.vdab.repository.ActorRepository;
 import be.vdab.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,21 +17,21 @@ import java.util.Map;
  */
 
 @Controller
-public class FilmController {
+public class ActorController {
 
     @Autowired
-    FilmRepository filmRepository;
+    ActorRepository actorRepository;
 
-    @RequestMapping("film.html")
-    public Film film(@RequestParam("id") int id) {
-        return filmRepository.findOne(id);
+    @RequestMapping("actor.html")
+    public Actor actor(@RequestParam("id") int id) {
+        return actorRepository.findOne(id);
     }
 
 
-    @RequestMapping("/films.html")
-    public String films(Map<String, Object> model){
-        model.put("films", filmRepository.findAll());
-        return "films";
+    @RequestMapping("/actors.html")
+    public String actors(Map<String, Object> model){
+        model.put("actors", actorRepository.findAll());
+        return "actors";
     }
 
 }

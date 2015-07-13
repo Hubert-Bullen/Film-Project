@@ -20,20 +20,20 @@
     </head>
     <body>
         <div class="container">
-            <h1>Films</h1>
+            <h1>Actors</h1>
             <table border="1" class="table table-striped">
                 <tr>
-                    <th>Title</th>
+                    <th>Name</th>
                     <th>Details</th>
                 </tr>
-                <c:forEach items="${films}" var="film">
+                <c:forEach items="${actors}" var="actor">
                     <tr>
                         <td>
-                            ${film.title}
+                                ${actor.getFullName()}
                         </td>
                         <td>
                             <div>
-                                <a href="film.html?id=${film.id}"><span class="glyphicon glyphicon-film"/></a>
+                                <a href="actor.html?id=${actor.id}"><span class="glyphicon glyphicon-user"/></a>
 
                                 <a href="home.html" class=""><span class="glyphicon glyphicon-pencil"/></a> <!--TODO: Add functionality. -->
 

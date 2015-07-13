@@ -14,36 +14,36 @@
         </style>
 
         <script type="application/javascript">
-            angular.module('cars', [])
-                    .controller('CarController', function($scope, $http) {
-                        $http.get('/brands').success(function(data) {
-                            $scope.brands = data;
+            angular.module('films', [])
+                    .controller('FilmController', function($scope, $http) {
+                        $http.get('/characters').success(function(data) {
+                            $scope.filmCharacters = data;
                         });
 
-                        this.onChooseBrand = function(brand) {
-                            $http.get('/models?filterBrand=' + brand.id).success(function(data) {
-                                $scope.models = data;
+                        this.onChooseFilmCharacter = function(filmCharacter) {
+                            $http.get('/characters?filterFilmCharacter=' + filmCharacter.id).success(function(data) {
+                                $scope.filmCharacters = data;
                             });
                         };
 
-                        this.onChooseModel = function(model) {
-                            alert("You have selected model '" + model.name + "'");
+                        this.onChooseActor = function(actor) {
+                            alert("You have selected Actor '" + actor.fullName + "'");
                         }
                     });
         </script>
     </head>
-    <body ng-app="cars" ng-controller="CarController as cc">
-        <h1>Car chooser</h1>
+    <body ng-app="films" ng-controller="FilmController as cc">
+        <h1>Film chooser</h1>
 
         <div>
-            Brand: <select ng-change="cc.onChooseBrand(brand)"
-                           ng-model="brand"
-                           ng-options="brand.name for brand in brands track by brand.id"></select>
+            FilmCharacter: <select ng-change="cc.onChooseFilmCharacter(filmCharacter)"
+                           ng-model="filmCharacter"
+                           ng-options="filmCharacter.charName for filmCharacter in filmCharacters track by filmCharacter.id"></select>
         </div>
         <div>
-            Model: <select ng-change="cc.onChooseModel(model)"
-                           ng-model="model"
-                           ng-options="model.name for model in models track by model.id"></select>
+            Actor: <select ng-change="cc.onChooseActor(actor)"
+                           ng-model="actor"
+                           ng-options="actor.fullName for actor in actors track by actor.id"></select>
         </div>
 
     </body>

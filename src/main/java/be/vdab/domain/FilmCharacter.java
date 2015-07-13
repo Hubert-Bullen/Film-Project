@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,10 +26,12 @@ public class FilmCharacter {
 
     @Valid
     @ManyToMany(mappedBy = "filmCharacters")
+    @JsonIgnore
     private List<Film> films;
 
     @Valid
     @ManyToMany(mappedBy = "filmCharacters")
+    @JsonIgnore
     private List<Actor> actors;
 
     public FilmCharacter() {
@@ -56,6 +59,14 @@ public class FilmCharacter {
         this.charName = charName;
     }
 
+/*    public List<String> getFilms() {
+        List<String> titles = new ArrayList<>();
+        for (Film f : films){
+            titles.add(f.getTitle());
+        }
+        return titles;
+    }*/
+
     public List<Film> getFilms() {
         return films;
     }
@@ -63,6 +74,14 @@ public class FilmCharacter {
     public void setFilms(List<Film> films) {
         this.films = films;
     }
+
+/*    public List<String> getActors() {
+        List<String> names = new ArrayList<>();
+        for (Actor a : actors){
+            names.add(a.getFullName());
+        }
+        return names;
+    }*/
 
     public List<Actor> getActors() {
         return actors;

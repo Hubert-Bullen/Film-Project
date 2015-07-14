@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -21,17 +22,19 @@ public class Actor {
     private int id;
 
     @NotBlank
-    @Size(min = 2, max = 12)
+    @Size(min = 2, max = 15)
     private String firstName;
 
     @NotBlank
-    @Size(min = 2, max = 12)
+    @Size(min = 2, max = 15)
     private String lastName;
 
     @NotBlank
     @Size(min = 2, max = 225)
     @Lob
     private String bio;
+
+    private Date dob;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -46,10 +49,11 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String bio, Gender gender, byte[] profileImage, List<FilmCharacter> filmCharacters) {
+    public Actor(String firstName, String lastName, String bio, Date dob, Gender gender, byte[] profileImage, List<FilmCharacter> filmCharacters) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
+        this.dob = dob;
         this.gender = gender;
         this.profileImage = profileImage;
         this.filmCharacters = filmCharacters;
@@ -109,6 +113,14 @@ public class Actor {
 
     public void setFilmCharacters(List<FilmCharacter> filmCharacters) {
         this.filmCharacters = filmCharacters;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
     }
 
     public String getFullName() {

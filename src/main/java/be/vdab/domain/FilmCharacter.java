@@ -21,7 +21,7 @@ public class FilmCharacter {
     private int id;
 
     @NotBlank
-    @Size(min = 2, max = 25)
+    @Size(min = 2, max = 40)
     private String charName;
 
     @Valid

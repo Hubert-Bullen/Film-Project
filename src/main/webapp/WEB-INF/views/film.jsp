@@ -38,9 +38,11 @@
                     <c:forEach items="${film.filmCharacters}" var="filmCharacter">
                         <tr>
                             <td>${filmCharacter.charName}</td>
+                            <td>
                         <c:forEach items="${filmCharacter.actors}" var="actor">
-                            <td><a href="actor.html?id=${actor.id}">${actor.getFullName()}</a></td>
+                                <div><a href="actor.html?id=${actor.id}">${actor.getFullName()}</a></div>
                         </c:forEach>
+                            </td>
                     </c:forEach>
                         </tr>
                 </table>

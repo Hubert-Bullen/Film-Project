@@ -50,12 +50,12 @@ public class FilmController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String create(@Valid Film film, BindingResult bindingResult){
-        /*if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()){
             return "film-form";
-        } else{*/
+        } else{
             filmRepository.save(film);
             return "redirect:/films.html";
-        //}
+        }
     }
 
     public List<Genre> genres(){

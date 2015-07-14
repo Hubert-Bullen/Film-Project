@@ -20,6 +20,14 @@
     </head>
     <body>
         <div class="container">
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="films.html">Films in DB</a> </li>
+                    <li><a href="actors.html">Actors in DB</a> </li>
+                </ul>
+            </nav>
+
             <h1>Films</h1>
             <table border="1" class="table table-striped">
                 <tr>
@@ -43,7 +51,7 @@
                     </tr>
                 </c:forEach>
             </table>
-            <a href="film-form.html" class="btn btn-success glyphicon glyphicon-plus"></a>
+            <a href="actor-form.html" class="btn btn-success glyphicon glyphicon-plus"></a>
 
         </div>
 

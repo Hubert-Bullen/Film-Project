@@ -23,7 +23,7 @@
             <h1>${actor.getFullName()}</h1>
             <h4>
                 <div id="bio">Bio: ${actor.bio}</div>
-                <div id="gender">${actor.gender}</div>
+                <div id="dob_gender">Date of Birth: ${actor.dob}, ${actor.gender}</div>
             </h4>
             <h4>Characters:</h4>
             <table id="characters" border="1" class="table table-striped">

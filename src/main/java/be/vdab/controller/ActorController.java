@@ -52,7 +52,7 @@ public class ActorController {
         return "actor-form";
     }
 
-    @RequestMapping(value = "/create-actor", method = RequestMethod.POST) //TODO:fix the value problem!
+    @RequestMapping(value = "/create-actor", method = RequestMethod.POST)
     public String create(@Valid Actor actor, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "actor-form";
@@ -60,6 +60,12 @@ public class ActorController {
             actorRepository.save(actor);
             return "redirect:/actors.html";
         }
+    }
+
+    @RequestMapping(value = "/remove-actor", method = RequestMethod.GET)
+    public String remove(@RequestParam(value = "id") Integer actorId){
+        actorRepository.delete(actorId);
+        return "redirect:/actors.html";
     }
 
     @ModelAttribute(value = "genders")

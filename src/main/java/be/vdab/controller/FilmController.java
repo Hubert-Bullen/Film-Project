@@ -59,6 +59,14 @@ public class FilmController {
         }
     }
 
+    @RequestMapping(value = "/remove-film", method = RequestMethod.GET)
+    public String remove(@RequestParam(value = "id") Integer filmId){
+        filmRepository.delete(filmId);
+        return "redirect:/films.html";
+    }
+
+
+
     @ModelAttribute(value = "genres")
     public List<Genre> genres(){
         List<Genre> genres = new ArrayList<>();

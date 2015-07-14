@@ -45,13 +45,13 @@
 
                                 <a href="film-form.html?id=${film.id}"><span class="glyphicon glyphicon-pencil"/></a>
 
-                                <a href="home.html"><span class="glyphicon glyphicon-remove"/></a> <!--TODO: Add functionality. -->
+                                <a href="remove-film.html?id=${film.id}"><span class="glyphicon glyphicon-remove"/></a> <!--TODO: Add functionality. -->
                             </div>
                         </td>
                     </tr>
                 </c:forEach>
             </table>
-            <a href="actor-form.html" class="btn btn-success glyphicon glyphicon-plus"></a>
+            <a href="film-form.html" class="btn btn-success glyphicon glyphicon-plus"></a>
 
         </div>
 

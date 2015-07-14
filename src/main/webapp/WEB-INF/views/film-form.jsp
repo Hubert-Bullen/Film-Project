@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         Genre:
-                        <sf:select path="genre" cssErrorClass="error" items="${genres}" cssClass="form-control"/><br/> <!--TODO:Looping over Enum!-->
+                        <sf:select path="genre" cssErrorClass="error" items="${genres}" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Director:

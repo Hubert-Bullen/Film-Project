@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         Gender:
-                            <sf:radiobuttons path="gender" cssErrorClass="error" items="${genders}"/><br/> <!--TODO:Looping over Enum!-->
+                            <sf:radiobuttons path="gender" cssErrorClass="error" items="${genders}"/><br/>
                     </div>
                     <div class="form-group">
                         Date of Birth (YYYY-MM-DD):

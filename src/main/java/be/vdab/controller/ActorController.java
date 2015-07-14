@@ -55,7 +55,7 @@ public class ActorController {
     public String create(@Valid Actor actor, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "actor-form";
-        } else{
+        }else{
             actorRepository.save(actor);
             return "redirect:/actors.html";
         }

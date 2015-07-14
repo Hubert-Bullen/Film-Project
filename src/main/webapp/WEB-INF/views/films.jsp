@@ -43,7 +43,7 @@
                             <div>
                                 <a href="film.html?id=${film.id}"><span class="glyphicon glyphicon-film"/></a>
 
-                                <a href="film-form.html?id=${film.id}"><span class="glyphicon glyphicon-pencil"/></a> <!--TODO: Add functionality. -->
+                                <a href="film-form.html?id=${film.id}"><span class="glyphicon glyphicon-pencil"/></a>
 
                                 <a href="home.html"><span class="glyphicon glyphicon-remove"/></a> <!--TODO: Add functionality. -->
                             </div>

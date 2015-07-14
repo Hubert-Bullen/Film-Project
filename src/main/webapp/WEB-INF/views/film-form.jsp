@@ -25,36 +25,37 @@
         <div class="container">
             <h1>Add a film</h1>
 
-            <sf:form commandName="film" action="create" method="post" cssClass="">
+            <sf:form commandName="film" action="create" method="post">
 
                 <div style="align-content: center">
                     <div class="form-group">
                         Title:
-                        <sf:input path="title" cssErrorClass="error" maxlength="50"/><br/>
+                        <sf:input path="title" cssErrorClass="error" maxlength="50" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Length:
-                        <sf:input path="length" cssErrorClass="error"/><br/>
+                        <sf:input path="length" cssErrorClass="error" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Summary:
-                        <sf:textarea path="summary" cssErrorClass="error"/><br/>
+                        <sf:textarea path="summary" cssErrorClass="error" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Genre:
-                        <%--<sf:select path="genre" cssErrorClass="error" items="genres"/>--%><br/>
+                        ${genres}
+                        <sf:select path="genre" cssErrorClass="error" items="${genres}" cssClass="form-control"/><br/> <!--TODO:Looping over Enum!-->
                     </div>
                     <div class="form-group">
                         Director:
-                        <sf:input path="directorFullName" cssErrorClass="error" maxlength="50"/><br/>
+                        <sf:input path="directorFullName" cssErrorClass="error" maxlength="50" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Rating:
-                        <sf:input path="userRating" cssErrorClass="error"/><br/>
+                        <sf:input path="userRating" cssErrorClass="error" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Trailer:
-                        <sf:input path="trailerUrl" cssErrorClass="error"/><br/>
+                        <sf:input path="trailerUrl" cssErrorClass="error" cssClass="form-control"/><br/>
                     </div>
                 </div>
                 <sf:hidden path="id"/><br/>

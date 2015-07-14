@@ -11,7 +11,7 @@
 
 <html>
     <head>
-        <title>Create Film</title>
+        <title>Create Actor</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -23,26 +23,30 @@
     </head>
     <body>
         <div class="container">
-            <h1>Add a film</h1>
+            <h1>Add an Actor</h1>
 
             <sf:form commandName="actor" action="create" method="post" cssClass="">
 
                 <div style="align-content: center">
                     <div class="form-group">
                         First name:
-                        <sf:input path="firstName" cssErrorClass="error" maxlength="15"/><br/>
+                        <sf:input path="firstName" cssErrorClass="error" maxlength="15" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Last name:
-                        <sf:input path="lastName" cssErrorClass="error" maxlength="15"/><br/>
+                        <sf:input path="lastName" cssErrorClass="error" maxlength="15" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Short biography:
-                        <sf:textarea path="bio" cssErrorClass="error"/><br/>
+                        <sf:textarea path="bio" cssErrorClass="error" cssClass="form-control"/><br/>
                     </div>
                     <div class="form-group">
                         Gender:
-                            <%--<sf:radiobuttons path="genre" cssErrorClass="error" items="genders"/>--%><br/>
+                            <%--<sf:radiobuttons path="gender" cssErrorClass="error" items="genders"/>--%><br/> <!--TODO:Looping over Enum!-->
+                    </div>
+                    <div class="form-group">
+                        Date of Birth (YYYY-MM-DD):
+                        <sf:input path="dob" cssErrorClass="error" cssClass="form-control"/><br/>
                     </div>
                 </div>
                 <sf:hidden path="id"/><br/>

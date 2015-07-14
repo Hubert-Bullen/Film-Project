@@ -28,7 +28,8 @@ public class Film {
     private int length;
 
     @NotBlank
-    @Size(min = 10, max = 225)
+    @Size(min = 10, max = 500)
+    @Column(length = 500)
     private String summary;
 
     @Lob

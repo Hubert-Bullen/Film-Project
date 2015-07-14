@@ -25,7 +25,7 @@
         <div class="container">
             <h1>Add an Actor</h1>
 
-            <sf:form commandName="actor" action="create" method="post" cssClass="">
+            <sf:form commandName="actor" action="create-actor" method="post" cssClass="">
 
                 <div style="align-content: center">
                     <div class="form-group">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         Gender:
-                            <%--<sf:radiobuttons path="gender" cssErrorClass="error" items="genders"/>--%><br/> <!--TODO:Looping over Enum!-->
+                            <sf:radiobuttons path="gender" cssErrorClass="error" items="${genders}"/><br/> <!--TODO:Looping over Enum!-->
                     </div>
                     <div class="form-group">
                         Date of Birth (YYYY-MM-DD):

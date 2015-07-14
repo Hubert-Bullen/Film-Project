@@ -30,7 +30,8 @@ public class Actor {
     private String lastName;
 
     @NotBlank
-    @Size(min = 2, max = 225)
+    @Size(min = 2, max = 500)
+    @Column(length = 500)
     @Lob
     private String bio;
 

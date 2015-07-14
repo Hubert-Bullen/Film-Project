@@ -35,7 +35,7 @@
                             <div>
                                 <a href="film.html?id=${film.id}"><span class="glyphicon glyphicon-film"/></a>
 
-                                <a href="home.html" class=""><span class="glyphicon glyphicon-pencil"/></a> <!--TODO: Add functionality. -->
+                                <a href="film-form.html?id=${film.id}"><span class="glyphicon glyphicon-pencil"/></a> <!--TODO: Add functionality. -->
 
                                 <a href="home.html"><span class="glyphicon glyphicon-remove"/></a> <!--TODO: Add functionality. -->
                             </div>
@@ -43,6 +43,7 @@
                     </tr>
                 </c:forEach>
             </table>
+            <a href="film-form.html" class="btn btn-success glyphicon glyphicon-plus"></a>
 
         </div>
 

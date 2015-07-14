@@ -22,7 +22,7 @@
         <div class="container">
             <h1>${film.title}</h1>
             <h4>
-                <div id="genre_length">Genre: ${film.genre}, Movie Length: ${film.length}</div>
+                <div id="genre_length">Genre: ${film.genre}, Movie Length: ${film.length} minutes</div>
                 <div id="rating">Current Rating: ${film.userRating}</div>
                 <div id="summary">Summary: ${film.summary}</div>
                 <div id="director">${film.directorFullName}</div>
@@ -44,6 +44,7 @@
                     </c:forEach>
                         </tr>
                 </table>
+
         </div>
 
     </body>

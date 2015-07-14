@@ -36,7 +36,7 @@ public class Film {
     @Basic(fetch = FetchType.LAZY)
     private byte[] coverImage;
 
-    //@NotNull
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Genre genre;
 

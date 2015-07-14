@@ -25,7 +25,7 @@
         <div class="container">
             <h1>Add a film</h1>
 
-            <sf:form commandName="film" action="create" method="post">
+            <sf:form commandName="film" action="create-film" method="post">
 
                 <div style="align-content: center">
                     <div class="form-group">
@@ -42,7 +42,6 @@
                     </div>
                     <div class="form-group">
                         Genre:
-                        ${genres}
                         <sf:select path="genre" cssErrorClass="error" items="${genres}" cssClass="form-control"/><br/> <!--TODO:Looping over Enum!-->
                     </div>
                     <div class="form-group">

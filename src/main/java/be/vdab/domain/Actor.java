@@ -37,7 +37,7 @@ public class Actor {
 
     private Date dob;
 
-    //@NotNull
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Gender gender;
 

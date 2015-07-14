@@ -49,7 +49,7 @@ public class FilmController {
         return "film-form";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/create-film", method = RequestMethod.POST)
     public String create(@Valid Film film, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
             return "film-form";

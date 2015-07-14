@@ -21,6 +21,7 @@
                     <li><a href="/">Home</a> </li>
                     <li><a href="films.html">Films in DB</a> </li>
                     <li><a href="actors.html">Actors in DB</a> </li>
+                    <li><a href="character-create">Create a character</a> </li>
                 </ul>
             </nav>
 

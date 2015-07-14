@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -55,7 +56,7 @@ public class Film {
 
     @Valid
     @ManyToMany
-    private List<FilmCharacter> filmCharacters;
+    private List<FilmCharacter> filmCharacters = new ArrayList<>();
 
     public Film() {
     }
@@ -150,5 +151,10 @@ public class Film {
 
     public void setFilmCharacters(List<FilmCharacter> filmCharacters) {
         this.filmCharacters = filmCharacters;
+    }
+
+    public void addToCharacters(FilmCharacter character) {
+        this.filmCharacters.add(character);
+        character.addFilm(this);
     }
 }

@@ -22,6 +22,15 @@
     </head>
     <body>
         <div class="container">
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="films.html">Films in DB</a> </li>
+                    <li><a href="actors.html">Actors in DB</a> </li>
+                    <li><a href="character-create">Create a character</a> </li>
+                </ul>
+            </nav>
+
             <h1>Add character</h1>
 
             <sf:form commandName="form">
@@ -29,7 +38,7 @@
                     <sf:select path="filmId" items="${films}" itemValue="id" itemLabel="title"/>
                 </div>
                 <div>
-                    <sf:select path="actorId" items="${actors}" itemValue="id" itemLabel="firstName"/>
+                    <sf:select path="actorId" items="${actors}" itemValue="id" itemLabel="fullName"/>
                 </div>
                 <div>
                     <sf:input path="characterName"/>

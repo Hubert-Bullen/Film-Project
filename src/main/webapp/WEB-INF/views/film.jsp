@@ -20,6 +20,15 @@
     </head>
     <body>
         <div class="container">
+            <nav>
+                <ul class="nav nav-tabs">
+                    <li><a href="/">Home</a> </li>
+                    <li><a href="films.html">Films in DB</a> </li>
+                    <li><a href="actors.html">Actors in DB</a> </li>
+                    <li><a href="character-create">Create a character</a> </li>
+                </ul>
+            </nav>
+
             <h1>${film.title}</h1>
             <h4>
                 <div id="genre_length">Genre: ${film.genre}, Movie Length: ${film.length} minutes</div>

@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,7 +46,7 @@ public class Actor {
 
     @Valid
     @ManyToMany
-    private List<FilmCharacter> filmCharacters;
+    private List<FilmCharacter> filmCharacters = new ArrayList<>();
 
     public Actor() {
     }
@@ -126,5 +127,10 @@ public class Actor {
 
     public String getFullName() {
         return firstName + " " + lastName;
+    }
+
+    public void addToCharacters(FilmCharacter character) {
+        filmCharacters.add(character);
+        character.addActor(this);
     }
 }

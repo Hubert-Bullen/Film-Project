@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -27,20 +28,18 @@ public class FilmCharacter {
     @Valid
     @ManyToMany(mappedBy = "filmCharacters")
     @JsonIgnore
-    private List<Film> films;
+    private List<Film> films = new ArrayList<>();
 
     @Valid
     @ManyToMany(mappedBy = "filmCharacters")
     @JsonIgnore
-    private List<Actor> actors;
+    private List<Actor> actors = new ArrayList<>();
 
     public FilmCharacter() {
     }
 
-    public FilmCharacter(String charName, List<Film> films, List<Actor> actors) {
+    public FilmCharacter(String charName) {
         this.charName = charName;
-        this.films = films;
-        this.actors = actors;
     }
 
     public int getId() {
@@ -59,35 +58,21 @@ public class FilmCharacter {
         this.charName = charName;
     }
 
-/*    public List<String> getFilms() {
-        List<String> titles = new ArrayList<>();
-        for (Film f : films){
-            titles.add(f.getTitle());
-        }
-        return titles;
-    }*/
+    void addFilm(Film film) {
+        films.add(film);
+    }
+
+    void addActor(Actor actor) {
+        actors.add(actor);
+    }
 
     public List<Film> getFilms() {
-        return films;
+        return Collections.unmodifiableList(films);
     }
 
-    public void setFilms(List<Film> films) {
-        this.films = films;
-    }
-
-/*    public List<String> getActors() {
-        List<String> names = new ArrayList<>();
-        for (Actor a : actors){
-            names.add(a.getFullName());
-        }
-        return names;
-    }*/
 
     public List<Actor> getActors() {
-        return actors;
+        return Collections.unmodifiableList(actors); //Zorgt dat deze nu Read only is! En krijgen mensen dus een stacktrace voor als ze hem toch probere gebruiken.
     }
 
-    public void setActors(List<Actor> actors) {
-        this.actors = actors;
-    }
 }

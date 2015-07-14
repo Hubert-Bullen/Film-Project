@@ -2,7 +2,9 @@ package be.vdab.controller;
 
 import be.vdab.domain.Actor;
 import be.vdab.domain.Film;
+import be.vdab.domain.FilmCharacter;
 import be.vdab.repository.ActorRepository;
+import be.vdab.repository.CharacterRepository;
 import be.vdab.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +23,9 @@ public class CharacterController {
     @Autowired
     private FilmRepository filmRepository;
 
+    @Autowired
+    private CharacterRepository characterRepository;
+
     @ModelAttribute("films")
     public List<Film> films() {
         return filmRepository.findAll();
@@ -31,15 +36,28 @@ public class CharacterController {
         return actorRepository.findAll();
     }
 
-    @RequestMapping("/character/create")
+    @RequestMapping("/character-create")
     public String showForm(@ModelAttribute("form") CharacterForm form) {
         return "character-form";
     }
 
-    @RequestMapping(value = "/character/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/character-create", method = RequestMethod.POST)
     public String create(CharacterForm form) {
+        Film film = filmRepository.findOne(form.getFilmId());
+        Actor actor = actorRepository.findOne(form.getActorId());
+
+        FilmCharacter fc = new FilmCharacter(form.getCharacterName());
+        film.addToCharacters(fc);
+        actor.addToCharacters(fc);
+
+        characterRepository.save(fc);
+        filmRepository.save(film);
+        actorRepository.save(actor);
+
+
+
         //TODO: complete this. All we need is already here: filmId, actorId and character name.
-        return "redirect:/";
+        return "redirect:/films.html?id=" + film.getId();
     }
 }
 

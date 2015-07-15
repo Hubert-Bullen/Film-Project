@@ -28,7 +28,7 @@
                     <li><a href="character-create">Create a character</a> </li>
                 </ul>
             </nav>
-            
+
             <h1>${actor.getFullName()}</h1>
             <h4>
                 <div id="bio">Bio: ${actor.bio}</div>

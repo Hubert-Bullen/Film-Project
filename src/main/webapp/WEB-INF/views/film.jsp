@@ -36,6 +36,7 @@
                 <div id="summary">Summary: ${film.summary}</div>
                 <div id="director">${film.directorFullName}</div>
                 <a href="${film.trailerUrl}">${film.title} Trailer</a>
+                <!-- TODO: Check how to inbed it into site! -->
             </h4>
                 <h4>Characters:</h4>
                 <table id="characters" border="1" class="table table-striped">
@@ -55,6 +56,9 @@
                     </c:forEach>
                         </tr>
                 </table>
+
+            <iframe src="http://www.youtube.com/embed/XGSy3_Czz8k?autoplay=1" height="250" width="250"></iframe>
+            <iframe width="854" height="510" src="https://www.youtube.com/embed/8hYlB38asDY" frameborder="0" allowfullscreen></iframe>
 
         </div>
 

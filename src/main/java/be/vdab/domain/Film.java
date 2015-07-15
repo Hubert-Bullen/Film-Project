@@ -61,16 +61,14 @@ public class Film {
     public Film() {
     }
 
-    public Film(String title, int length, String summary, byte[] coverImage, Genre genre, String directorFullName, int userRating, URL trailerUrl, List<FilmCharacter> filmCharacters) {
+    public Film(String title, int length, String summary, Genre genre, String directorFullName, int userRating, URL trailerUrl) {
         this.title = title;
         this.length = length;
         this.summary = summary;
-        this.coverImage = coverImage;
         this.genre = genre;
         this.directorFullName = directorFullName;
         this.userRating = userRating;
         this.trailerUrl = trailerUrl;
-        this.filmCharacters = filmCharacters;
     }
 
     public int getId() {

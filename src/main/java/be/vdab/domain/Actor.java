@@ -51,14 +51,12 @@ public class Actor {
     public Actor() {
     }
 
-    public Actor(String firstName, String lastName, String bio, Date dob, Gender gender, byte[] profileImage, List<FilmCharacter> filmCharacters) {
+    public Actor(String firstName, String lastName, String bio, Date dob, Gender gender) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.bio = bio;
         this.dob = dob;
         this.gender = gender;
-        this.profileImage = profileImage;
-        this.filmCharacters = filmCharacters;
     }
 
     public int getId() {

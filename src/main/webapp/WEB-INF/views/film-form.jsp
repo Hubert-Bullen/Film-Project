@@ -23,14 +23,7 @@
     </head>
     <body>
         <div class="container">
-            <nav>
-                <ul class="nav nav-tabs">
-                    <li><a href="/">Home</a> </li>
-                    <li><a href="films.html">Films in DB</a> </li>
-                    <li><a href="actors.html">Actors in DB</a> </li>
-                    <li><a href="character-create">Create a character</a> </li>
-                </ul>
-            </nav>
+            <jsp:include page="/WEB-INF/views/navbar-source.jsp"></jsp:include>
 
             <h1>Add a film</h1>
 

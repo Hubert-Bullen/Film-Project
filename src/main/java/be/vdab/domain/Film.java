@@ -50,7 +50,6 @@ public class Film {
     @Max(10)
     @Column(name = "rating")
     private int userRating;
-    //TODO:change later!
 
     private URL trailerUrl;
 
@@ -130,7 +129,7 @@ public class Film {
         this.directorFullName = directorFullName;
     }
 
-    public int getUserRating() { //TODO: Test
+    public int getUserRating() {
         if (comments.isEmpty()){
             return userRating;
         }else {

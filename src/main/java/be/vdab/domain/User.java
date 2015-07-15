@@ -29,8 +29,8 @@ public class User {
 
     private String email;
 
-    /*@OneToMany
-    private List<Comment> comments;*/
+    @OneToMany
+    private List<Comment> comments;
 
     public User(String userName, String password, String email) {
         this.userName = userName;
@@ -73,11 +73,11 @@ public class User {
         this.email = email;
     }
 
-    /*public List<Comment> getComments() {
+    public List<Comment> getComments() {
         return comments;
     }
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
-    }*/
+    }
 }

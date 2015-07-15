@@ -18,8 +18,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    //@ManyToOne
-    //private User author; TODO: Out-comment and test.
+    @ManyToOne
+    private User author;
 
     @NotBlank
     @Size(min = 10, max = 500)
@@ -31,7 +31,7 @@ public class Comment {
     @ManyToOne
     private Film film;
 
-    public Comment(/*User author,*/ String content, int rating, Film film) {
+    public Comment(User author, String content, int rating, Film film) {
         //this.author = author;
         this.content = content;
         this.rating = rating;
@@ -49,13 +49,13 @@ public class Comment {
         this.id = id;
     }
 
-/*    public User getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
     public void setAuthor(User author) {
         this.author = author;
-    }*/
+    }
 
     public String getContent() {
         return content;

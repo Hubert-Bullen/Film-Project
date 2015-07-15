@@ -58,6 +58,9 @@ public class Film {
     @ManyToMany
     private List<FilmCharacter> filmCharacters = new ArrayList<>();
 
+    @OneToMany
+    private List<Comment> comments = new ArrayList<>();
+
     public Film() {
     }
 
@@ -127,8 +130,16 @@ public class Film {
         this.directorFullName = directorFullName;
     }
 
-    public int getUserRating() {
-        return userRating;
+    public int getUserRating() { //TODO: Test
+        if (comments.isEmpty()){
+            return userRating;
+        }else {
+            for (Comment c: comments){
+                userRating += c.getRating();
+            }
+            userRating /= comments.size();
+            return userRating;
+        }
     }
 
     public void setUserRating(int userRating) {
@@ -154,5 +165,13 @@ public class Film {
     public void addToCharacters(FilmCharacter character) {
         this.filmCharacters.add(character);
         character.addFilm(this);
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 }

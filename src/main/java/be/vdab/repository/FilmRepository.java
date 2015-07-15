@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
  * Created by Hyuberuto on 10/07/15.
  */
 @Repository
-public interface FilmRepository  extends JpaRepository<Film, Integer> {
+public interface FilmRepository extends JpaRepository<Film, Integer> {
 }

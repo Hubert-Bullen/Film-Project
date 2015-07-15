@@ -46,7 +46,7 @@
 
                                 <a href="film-form.html?id=${film.id}"><span class="glyphicon glyphicon-pencil"/></a>
 
-                                <a href="remove-film.html?id=${film.id}"><span class="glyphicon glyphicon-remove" style="color: red"/></a> <!--TODO: Add functionality. -->
+                                <a href="remove-film.html?id=${film.id}"><span class="glyphicon glyphicon-remove" style="color: red"/></a>
                             </div>
                         </td>
                     </tr>

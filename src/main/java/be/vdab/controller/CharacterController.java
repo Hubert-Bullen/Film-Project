@@ -54,9 +54,6 @@ public class CharacterController {
         filmRepository.save(film);
         actorRepository.save(actor);
 
-
-
-        //TODO: complete this. All we need is already here: filmId, actorId and character name.
         return "redirect:/films.html?id=" + film.getId();
     }
 }

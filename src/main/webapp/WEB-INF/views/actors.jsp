@@ -46,7 +46,7 @@
 
                                 <a href="actor-form.html?id=${actor.id}" class=""><span class="glyphicon glyphicon-pencil"/></a>
 
-                                <a href="remove-actor.html?id=${actor.id}"><span class="glyphicon glyphicon-remove" style="color: red"/></a> <!--TODO: Add functionality. -->
+                                <a href="remove-actor.html?id=${actor.id}"><span class="glyphicon glyphicon-remove" style="color: red"/></a>
                             </div>
                         </td>
                     </tr>

@@ -49,7 +49,6 @@ public class CharacterRepositoryTest {
 
     @Test
     public void testSaveCharacterInDB(){
-        int size = characterRepository.findAll().size();
         FilmCharacter james= new FilmCharacter("James Rhodes");
         characterRepository.saveAndFlush(james);
 

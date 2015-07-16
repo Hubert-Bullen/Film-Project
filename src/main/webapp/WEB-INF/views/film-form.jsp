@@ -25,7 +25,7 @@
         <div class="container">
             <jsp:include page="/WEB-INF/views/navbar-source.jsp"></jsp:include>
 
-            <h1>Add a film</h1>
+            <div class="col-md-offset-4"><h1>New Film</h1></div>
 
             <sf:form commandName="film" action="create-film" method="post">
 

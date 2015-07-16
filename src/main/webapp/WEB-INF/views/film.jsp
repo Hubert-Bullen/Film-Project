@@ -48,7 +48,16 @@
                     </c:forEach>
                         </tr>
                 </table>
-            <div id="demo"></div>
+            <c:forEach items="${film.comments}" var="comment">
+                <div>
+                    Comment:
+                    <br/>
+                    Rating: ${comment.rating}
+                    <br/>
+                    ${comment.content}
+                </div>
+            </c:forEach>
+            <a href="comment-form.html?filmId=${film.id}" class="btn btn-warning glyphicon glyphicon-comment"></a>
 
         </div>
 

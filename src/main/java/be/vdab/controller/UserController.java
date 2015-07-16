@@ -38,6 +38,7 @@ public class UserController {
         if (bindingResult.hasErrors()){
             return "user-form";
         }else{
+            user.setPassword(Integer.toString(user.getPassword().hashCode()));
             userRepository.save(user);
             return "redirect:/";
         }

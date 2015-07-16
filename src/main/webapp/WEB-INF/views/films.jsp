@@ -40,6 +40,8 @@
                                 <a href="film-form.html?id=${film.id}"><span class="glyphicon glyphicon-pencil"/></a>
 
                                 <a href="remove-film.html?id=${film.id}"><span class="glyphicon glyphicon-remove" style="color: red"/></a>
+
+                                <a href="comment-form.html?filmId=${film.id}"><span class="glyphicon glyphicon-comment" style="color: darkgoldenrod"/></a>
                             </div>
                         </td>
                     </tr>

@@ -1,7 +1,9 @@
 package be.vdab.controller;
 
+import be.vdab.domain.Comment;
 import be.vdab.domain.Film;
 import be.vdab.domain.Genre;
+import be.vdab.repository.CommentRepository;
 import be.vdab.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +27,9 @@ public class FilmController {
 
     @Autowired
     FilmRepository filmRepository;
+
+    @Autowired
+    CommentRepository commentRepository;
 
     @RequestMapping("film.html")
     public Film film(@RequestParam("id") int id) {
@@ -74,6 +79,11 @@ public class FilmController {
             genres.add(g);
         }
         return genres;
+    }
+
+    @ModelAttribute(value = "comments")
+    public List<Comment> comments(){
+        return commentRepository.findAll();
     }
 
 }

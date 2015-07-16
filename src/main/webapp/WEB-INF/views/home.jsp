@@ -20,9 +20,6 @@
 
             <h1>Home</h1>
             <p>This is the home page.</p>
-            <a href="user-form.html">Register</a>
-            <%--<a href="film.html?id=1">Iron Man details</a>--%>
-            <%-- <a href="chooser.html">Model chooser</a>--%>
         </div>
     </body>
 </html>

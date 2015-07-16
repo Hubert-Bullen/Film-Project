@@ -25,24 +25,38 @@
         <div class="container">
             <jsp:include page="/WEB-INF/views/navbar-source.jsp"></jsp:include>
 
-            <h1>Register yourself</h1>
+            <div class="col-md-offset-4"><h1>Register yourself</h1></div>
+
 
             <sf:form commandName="user" action="create-user" method="post">
 
-                <div style="align-content: center">
-                    <div class="form-group">
-                        User name:
-                        <sf:input path="userName" cssErrorClass="error" cssClass="form-control"/><br/>
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon">Username</span>
+                            <sf:input path="userName" class="form-control" placeholder="Minimum 9,Maximum 15 characters"/>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        Password:
-                        <sf:password path="password" cssErrorClass="error" maxlength="15" cssClass="form-control"/><br/>
+                    <br/>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon">Password</span>
+                            <sf:password path="password" cssErrorClass="error" placeholder="Minimum 9,Maximum 15 characters" cssClass="form-control"/><br/>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        E-mail:
-                        <sf:input path="email" cssErrorClass="error" cssClass="form-control"/><br/>
+                    <br/>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon">Email</span>
+                            <sf:input path="email" cssErrorClass="error" cssClass="form-control" placeholder="Optional,but advised"/><br/>
+                        </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="col-md-5 col-md-offset-4" >
                         <button type="submit" class="btn btn-success btn-block">Register</button>

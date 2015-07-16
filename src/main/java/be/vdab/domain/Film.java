@@ -133,6 +133,7 @@ public class Film {
         if (comments.isEmpty()){
             return userRating;
         }else {
+            userRating=0;
             for (Comment c: comments){
                 userRating += c.getRating();
             }

@@ -28,14 +28,11 @@ public class Comment {
 
     private int rating;
 
-    @ManyToOne
-    private Film film;
-
-    public Comment(User author, String content, int rating, Film film) {
-        //this.author = author;
+    public Comment(User author, String content, int rating) {
+        this.author = author;
         this.content = content;
         this.rating = rating;
-        this.film = film;
+
     }
 
     public Comment() {
@@ -73,11 +70,5 @@ public class Comment {
         this.rating = rating;
     }
 
-    public Film getFilm() {
-        return film;
-    }
 
-    public void setFilm(Film film) {
-        this.film = film;
-    }
 }

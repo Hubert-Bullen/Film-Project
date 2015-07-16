@@ -34,7 +34,7 @@
                         <div class="col-md-8 col-md-offset-1">
                             <div class="input-group">
                                 <span class="input-group-addon">Content</span>
-                                <sf:textarea path="content" class="form-control" placeholder="Minimum 2,Maximum 500 characters"/>
+                                <sf:textarea path="content" class="form-control" placeholder="Minimum 10, Maximum 500 characters"/>
                             </div>
                         </div>
                     </div>

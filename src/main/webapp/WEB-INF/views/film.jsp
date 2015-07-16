@@ -49,12 +49,28 @@
                         </tr>
                 </table>
             <c:forEach items="${film.comments}" var="comment">
-                <div>
-                    Rating: ${comment.rating}
-                    <br/>
-                    ${comment.content}
+            <div class="container content">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="testimonials">
+
+                            <div class="active item">
+                                <blockquote><p>${comment.content}</p></blockquote>
+                                <div class="carousel-info">
+                                    <div class="pull-left">
+                                        <span class="testimonials-rating"><p>Rating: ${comment.rating}</p></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+            </div>
             </c:forEach>
+
+
+
             <a href="comment-form.html?filmId=${film.id}" class="btn btn-warning glyphicon glyphicon-comment"></a>
 
         </div>

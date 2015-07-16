@@ -25,19 +25,29 @@
         <div class="container">
             <jsp:include page="/WEB-INF/views/navbar-source.jsp"></jsp:include>
 
-            <h1>Comment</h1>
+            <div class="col-md-offset-3"><h1>Add Comment</h1></div>
 
             <sf:form commandName="comment" action="create-comment" method="post" cssClass="form-horizontal">
 
                 <div style="align-content: center">
                     <div class="form-group">
-                        Comment:
-                        <sf:textarea path="content" cssErrorClass="error" cssClass="form-control"/><br/>
+                        <div class="col-md-8 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">Content</span>
+                                <sf:textarea path="content" class="form-control" placeholder="Minimum 2,Maximum 500 characters"/>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        Rating:
-                        <sf:select path="rating" cssErrorClass="error" cssClass="form-control" items="${numbers}"/><br/>
+                        <div class="col-md-2 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">Rating</span>
+                                <sf:select path="rating" class="form-control"  items="${numbers}"/>
+                            </div>
+                        </div>
+                        <br/>
                     </div>
+
                     <input type="hidden" name="filmId" value="${param.filmId}"/>
 
                 </div>

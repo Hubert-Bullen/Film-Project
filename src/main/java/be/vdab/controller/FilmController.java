@@ -86,4 +86,14 @@ public class FilmController {
         return commentRepository.findAll();
     }
 
+    @ModelAttribute(value = "numbers")
+    public List<Integer> numbers(){
+        List<Integer> numbers = new ArrayList<>();
+        Integer i;
+        for (i = 1; i <= 10; i++){
+            numbers.add(i);
+        }
+        return numbers;
+    }
+
 }

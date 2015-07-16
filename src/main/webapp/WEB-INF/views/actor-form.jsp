@@ -25,39 +25,68 @@
         <div class="container">
             <jsp:include page="/WEB-INF/views/navbar-source.jsp"></jsp:include>
 
-            <h1>Add an Actor</h1>
+            <div class="col-md-offset-3"><h1>New Actor</h1></div>
 
-            <sf:form commandName="actor" action="create-actor" method="post" cssClass="">
+            <sf:form commandName="actor" action="create-actor" method="post" cssClass="form-horizontal">
 
                 <div style="align-content: center">
                     <div class="form-group">
-                        First name:
-                        <sf:input path="firstName" cssErrorClass="error" maxlength="15" cssClass="form-control"/><br/>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">First Name</span>
+                                <sf:input path="firstName" class="form-control" placeholder="Minimum 2,Maximum 15 characters"/>
+                            </div>
+                        </div>
+                        <br/>
                     </div>
                     <div class="form-group">
-                        Last name:
-                        <sf:input path="lastName" cssErrorClass="error" maxlength="15" cssClass="form-control"/><br/>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">Last Name</span>
+                                <sf:input path="lastName" class="form-control" placeholder="Minimum 2,Maximum 15 characters"/>
+                            </div>
+                        </div>
+                        <br/>
                     </div>
                     <div class="form-group">
-                        Short biography:
-                        <sf:textarea path="bio" cssErrorClass="error" cssClass="form-control"/><br/>
+                        <div class="col-md-8 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">Short Biography</span>
+                                <sf:textarea path="bio" class="form-control" placeholder="Minimum 2,Maximum 500 characters"/>
+                            </div>
+                        </div>
+                        <br/>
                     </div>
                     <div class="form-group">
-                        Gender:
-                            <sf:radiobuttons path="gender" cssErrorClass="error" items="${genders}"/><br/>
+                        <div class="col-md-4 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">Date of Birth (YYYY-MM-DD)</span>
+                                <sf:input path="dob" cssErrorClass="error" cssClass="form-control"/><br/>
+                            </div>
+                        </div>
+                        <br/>
                     </div>
                     <div class="form-group">
-                        Date of Birth (YYYY-MM-DD):
-                        <sf:input path="dob" cssErrorClass="error" cssClass="form-control"/><br/>
+                        <div class="col-md-5 col-md-offset-1">
+                            <div class="input-group">
+                                <span class="input-group-addon">Gender</span>
+                                <div>
+                                <sf:radiobuttons path="gender" cssClass="radio-inline" cssErrorClass="error" items="${genders}"/>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
                     </div>
+
                 </div>
-                <sf:hidden path="id"/><br/>
+
                 <div class="form-group">
-                    <div class="col-md-5 col-md-offset-4" >
+                    <div class="col-md-3 col-md-offset-3" >
                         <button type="submit" class="btn btn-success btn-block">Add Actor to Database</button>
                     </div>
                 </div>
 
+                <sf:hidden path="id"/>
             </sf:form>
 
         </div>

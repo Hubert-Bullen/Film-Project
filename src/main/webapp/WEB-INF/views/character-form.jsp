@@ -26,7 +26,7 @@
 
             <div class="col-md-offset-3"><h1>New Character</h1></div>
 
-            <sf:form commandName="form">
+            <sf:form commandName="form" cssClass="form-horizontal">
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-1">
                         <div class="input-group">

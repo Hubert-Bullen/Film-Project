@@ -28,7 +28,7 @@
             <div class="col-md-offset-4"><h1>Register yourself</h1></div>
 
 
-            <sf:form commandName="user" action="create-user" method="post">
+            <sf:form commandName="user" action="create-user" method="post" cssClass="form-horizontal">
 
                 <div class="form-group">
                     <div class="col-md-4 col-md-offset-1">

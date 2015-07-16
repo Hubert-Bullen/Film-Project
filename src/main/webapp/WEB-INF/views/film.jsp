@@ -50,8 +50,6 @@
                 </table>
             <c:forEach items="${film.comments}" var="comment">
                 <div>
-                    Comment:
-                    <br/>
                     Rating: ${comment.rating}
                     <br/>
                     ${comment.content}

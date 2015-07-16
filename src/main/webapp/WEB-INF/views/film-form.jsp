@@ -27,7 +27,7 @@
 
             <div class="col-md-offset-3"><h1>New Film</h1></div>
 
-            <sf:form commandName="film" action="create-film" method="post">
+            <sf:form commandName="film" action="create-film" method="post" cssClass="form-horizontal">
 
                 <div style="align-content: center">
                     <div class="form-group">

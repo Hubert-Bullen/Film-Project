@@ -27,7 +27,7 @@
 
             <h1>Comment</h1>
 
-            <sf:form commandName="comment" action="create-comment" method="post">
+            <sf:form commandName="comment" action="create-comment" method="post" cssClass="form-horizontal">
 
                 <div style="align-content: center">
                     <div class="form-group">

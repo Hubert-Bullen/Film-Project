@@ -18,8 +18,8 @@
         <div class="container">
             <jsp:include page="/WEB-INF/views/navbar-source.jsp"></jsp:include>
 
-            <h1>Home</h1>
-            <p>This is the home page.</p>
+            <h1>Welcome to your own personal Film database!</h1>
+            <p>Use the navigation bar to start working on it!</p>
         </div>
     </body>
 </html>
